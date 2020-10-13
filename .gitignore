@@ -139,4 +139,10 @@ dist
 ### database ###
 *.sqlite
 
+### images ###
+*.png
+*.jpg
+*.jpeg
+*.svg
+
 # End of https://www.toptal.com/developers/gitignore/api/vscode,node,linux
