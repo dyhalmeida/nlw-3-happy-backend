@@ -5,8 +5,8 @@ import Orphanage from '../models/Orphanage';
 export default {
   async index(request: Request, response: Response) {
     const orphanageRepository = getRepository(Orphanage);
-    const orphanage = await orphanageRepository.find();
-    return response.json(orphanage);
+    const orphanages = await orphanageRepository.find();
+    return response.json(orphanages);
   },
 
   async store(request: Request, response: Response) {
