@@ -6,7 +6,9 @@ export default {
   async show(request: Request, response: Response) {
     const { id } = request.params;
     const orphanageRepository = getRepository(Orphanage);
-    const orphanage = await orphanageRepository.findOneOrFail(id);
+    const orphanage = await orphanageRepository.findOneOrFail(id, {
+      relations: ['images'],
+    });
     return response.json(orphanage);
   },
 
