@@ -3,6 +3,13 @@ import { getRepository } from 'typeorm';
 import Orphanage from '../models/Orphanage';
 
 export default {
+  async show(request: Request, response: Response) {
+    const { id } = request.params;
+    const orphanageRepository = getRepository(Orphanage);
+    const orphanage = await orphanageRepository.findOneOrFail(id);
+    return response.json(orphanage);
+  },
+
   async index(request: Request, response: Response) {
     const orphanageRepository = getRepository(Orphanage);
     const orphanages = await orphanageRepository.find();
