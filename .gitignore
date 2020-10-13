@@ -136,4 +136,7 @@ dist
 !.vscode/extensions.json
 *.code-workspace
 
+### database ###
+*.sqlite
+
 # End of https://www.toptal.com/developers/gitignore/api/vscode,node,linux
