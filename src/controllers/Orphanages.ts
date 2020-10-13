@@ -3,6 +3,12 @@ import { getRepository } from 'typeorm';
 import Orphanage from '../models/Orphanage';
 
 export default {
+  async index(request: Request, response: Response) {
+    const orphanageRepository = getRepository(Orphanage);
+    const orphanage = await orphanageRepository.find();
+    return response.json(orphanage);
+  },
+
   async store(request: Request, response: Response) {
     const {
       name,
